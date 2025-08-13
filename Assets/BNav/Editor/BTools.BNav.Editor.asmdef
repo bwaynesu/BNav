@@ -1,0 +1,19 @@
+{
+    "name": "BTools.BNav.Editor",
+    "rootNamespace": "BTools.BNav.Editor",
+    "references": [
+        "BTools.BNav.Runtime",
+        "Unity.ugui"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
