@@ -2,7 +2,7 @@
   "name": "com.bwaynesu.btools.bnav",
   "displayName": "BNav",
   "description": "Enhanced Unity UI Navigation Component with grouping system for Unity",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "unity": "2020.3",
   "keywords": [
     "ui",
