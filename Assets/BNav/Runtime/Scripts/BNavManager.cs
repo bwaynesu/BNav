@@ -95,8 +95,11 @@ namespace BTools.BNav
                 throw new System.ArgumentNullException(nameof(globalSettings), "Global settings cannot be null.");
             }
 
-            foreach ((var targetGroup, var navigations) in groupNavigationsMap)
+            foreach (var e in groupNavigationsMap)
             {
+                var targetGroup = e.Key;
+                var navigations = e.Value;
+
                 if (!globalSettings.CanNavigate(fromGroup, targetGroup))
                 {
                     continue;

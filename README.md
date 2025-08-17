@@ -2,7 +2,7 @@
 
 [![Release Version](https://img.shields.io/github/v/release/bwaynesu/BNav?include_prereleases)](https://github.com/bwaynesu/BNav/releases) 
 [![Release Date](https://img.shields.io/github/release-date/bwaynesu/BNav.svg)](https://github.com/bwaynesu/BNav/releases)  
-[![Unity Version](https://img.shields.io/badge/Unity-2022.3%2B-blue.svg?style=flat&logo=unity)](https://unity3d.com/get-unity/download) 
+[![Unity Version](https://img.shields.io/badge/Unity-2020.3%2B-blue.svg?style=flat&logo=unity)](https://unity3d.com/get-unity/download) 
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE) 
 [![Twitter](https://img.shields.io/twitter/follow/bwaynesu.svg?label=Follow&style=social)](https://x.com/intent/follow?screen_name=bwaynesu)
 
@@ -238,9 +238,8 @@ This project is under the [MIT License](LICENSE).
 
 ## ✍️ Author
 
-[bwaynesu](https://bwaynesu.github.io/portfolio/) 
-[![Twitter](https://img.shields.io/twitter/follow/bwaynesu.svg?label=Follow&style=social)](https://twitter.com/intent/follow?screen_name=bwaynesu) 
-![GitHub followers](https://img.shields.io/github/followers/bwaynesu?style=social)
+- [bwaynesu](https://bwaynesu.github.io/portfolio/) 
+[![Twitter](https://img.shields.io/twitter/follow/bwaynesu.svg?label=Follow&style=social)](https://twitter.com/intent/follow?screen_name=bwaynesu)
 
 ## 🔗 Links
 

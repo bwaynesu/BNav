@@ -179,7 +179,7 @@ namespace BTools.BNav.Editor
             var headerRect = EditorGUILayout.GetControlRect(false, 30);
             var backgroundColor = new Color(0.2f, 0.4f, 0.2f, 0.7f); // Semi-transparent dark green
             EditorGUI.DrawRect(headerRect, backgroundColor);
-            
+
             // Draw centered white text
             var headerStyle = new GUIStyle(GUI.skin.label)
             {
@@ -188,9 +188,9 @@ namespace BTools.BNav.Editor
                 fontSize = 14,
                 normal = { textColor = Color.white }
             };
-            
+
             EditorGUI.LabelField(headerRect, "BNavigation", headerStyle);
-            
+
             // Add some space after header
             EditorGUILayout.Space(5);
         }
@@ -217,7 +217,11 @@ namespace BTools.BNav.Editor
 
                     if (GUILayout.Button("Edit", GUILayout.Width(40)))
                     {
+#if UNITY_2021_1_OR_NEWER
                         EditorUtility.OpenPropertyEditor(globalSettings);
+#else
+                        Selection.activeObject = globalSettings;
+#endif
                     }
                 }
                 else
