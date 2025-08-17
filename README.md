@@ -6,26 +6,41 @@
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE) 
 [![Twitter](https://img.shields.io/twitter/follow/bwaynesu.svg?label=Follow&style=social)](https://x.com/intent/follow?screen_name=bwaynesu)
 
-BNav is a Unity UI navigation system that **organizes UI elements into groups** and provides smart navigation between them. Perfect for creating complex UI systems like menus, settings, and inventories where you need precise control over navigation flow.
+BNav is a Unity UI navigation system that **organizes UI elements into groups** and provides smart navigation between them. Perfect for creating complex UI systems like menus, settings, and inventories where you need precise control over navigation flow.  
+
+<img height="400" alt="Unity_2025-08-17_13-40-32" src="https://github.com/user-attachments/assets/5ace8c02-1780-4544-9610-62757def95e5" /></br>
 
 ## ✨ Key Features
 
 ### 🏷️ **UI Group Management**
-- **Organize UI elements into named groups** (e.g., "MainMenu", "MainMenu/Profile", "Settings")
-- **Control navigation between groups** - define which groups can navigate to which other groups
-- **Hierarchical group support** with parent/child relationships using "/" separator
-- **Global settings for group navigation rules**
+- **Organize UI elements into named groups** (e.g., "MainMenu", "MainMenu/Profile", "Settings")  
+  <img width="300" alt="set_group" src="https://github.com/user-attachments/assets/5e0c0977-72b3-416c-b511-d6f67457a3f6" />
+
+- **Control navigation between groups** - define which groups can navigate to which other groups  
+  <img width="600" alt="Unity_2025-08-17_14-05-36" src="https://github.com/user-attachments/assets/61e62418-f317-421d-ae81-f555c38367c5" />
+
+- **Hierarchical group support** with parent/child relationships using "/" separator  
+  <img width="400" alt="group_slash" src="https://github.com/user-attachments/assets/38226f43-7115-416f-8434-9def7d9711f7" />
 
 ### 🎯 **Smart Navigation System**
-- **Intelligent target selection** based on distance, angle, and priority
-- **Customizable search cones** for each direction (0-1 range, where 0.5 ≈ 120°)
-- **Ignore ranges** to exclude certain areas from navigation calculations
-- **Global vs Local direction modes** (screen coordinates vs object transform)
+- **Intelligent target selection** based on distance, angle, and priority  
+  <img width="600" alt="Unity_2025-08-17_14-25-03" src="https://github.com/user-attachments/assets/9d749420-d802-459a-82ad-9b9e33018f48" />
+
+- **Customizable search cones** for each direction (0-1 range, where 0.5 ≈ 120°)  
+  <img width="600" alt="Unity_2025-08-17_14-32-45" src="https://github.com/user-attachments/assets/278e811b-b9ea-4303-8297-42657faaaa2a" />
+
+- **Ignore ranges** to exclude certain areas from navigation calculations  
+  <img width="600" alt="Unity_2025-08-17_14-42-51" src="https://github.com/user-attachments/assets/e7ca97ed-5779-4370-bcc6-091c33060cb0" />
+
+- **Global vs Local direction modes** (screen coordinates vs object transform)  
+  <img width="600" alt="Unity_2025-08-17_15-01-27" src="https://github.com/user-attachments/assets/d5b7671b-7087-4b2b-8d94-55ad636e57f7" />
 
 ### 🔄 **Fallback Navigation**
 - **Backup navigation targets** when no direct target is found
 - **Perfect for loop navigation** (e.g., last item jumps to first item)
-- **Per-direction fallback lists** (Up, Down, Left, Right)
+- **Per-direction fallback lists** (Up, Down, Left, Right)  
+
+https://github.com/user-attachments/assets/0bee79db-19fc-4b26-9417-ff13e099c5d7
 
 ### 🎨 **Visual Development Tools**
 - **Scene view gizmos** showing navigation connections and search ranges
@@ -239,7 +254,6 @@ This project is under the [MIT License](LICENSE).
 ## ✍️ Author
 
 - [bwaynesu](https://bwaynesu.github.io/portfolio/) 
-[![Twitter](https://img.shields.io/twitter/follow/bwaynesu.svg?label=Follow&style=social)](https://twitter.com/intent/follow?screen_name=bwaynesu)
 
 ## 🔗 Links
 
