@@ -33,6 +33,7 @@
 
 # Visual Studio cache directory
 .vs/
+.vsconfig
 
 # Gradle cache directory
 .gradle/
@@ -54,7 +55,6 @@ ExportedObj/
 *.mdb
 *.opendb
 *.VC.db
-.vsconfig
 
 # Unity3D generated meta files
 *.pidb.meta
@@ -98,3 +98,11 @@ InitTestScene*.unity*
 
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
+
+# Node.js
+node_modules/
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
