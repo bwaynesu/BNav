@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/bwaynesu/BNav/compare/1.1.0...1.2.0) (2025-08-20)
+
+
+### Features
+
+* add navigation validation flags for enhanced target checks ([d21cbbd](https://github.com/bwaynesu/BNav/commit/d21cbbd768efba5875499421ab8043f2ab7a1af5))
+
 # [1.1.0](https://github.com/bwaynesu/BNav/compare/1.0.0...1.1.0) (2025-08-17)
 
 
