@@ -54,6 +54,28 @@ namespace BTools.BNav
     }
 
     /// <summary>
+    /// Navigation validation flags that control which conditions must be met for navigation
+    /// </summary>
+    [System.Flags]
+    public enum NavigationValidationFlags
+    {
+        /// <summary>
+        /// No additional validation checks
+        /// </summary>
+        None = 0,
+
+        /// <summary>
+        /// Check if the target Selectable component is enabled
+        /// </summary>
+        CheckSelectableEnabled = 1 << 0,
+
+        /// <summary>
+        /// Check if the target Selectable is interactable
+        /// </summary>
+        CheckSelectableInteractable = 1 << 1,
+    }
+
+    /// <summary>
     /// Enhanced navigation component that overrides Unity's built-in Selectable navigation
     /// </summary>
     [ExecuteInEditMode]
@@ -76,6 +98,10 @@ namespace BTools.BNav
         [Tooltip("Priority for navigation selection (higher values have priority when distances are equal)")]
         [SerializeField]
         private int priority = 0;
+
+        [Tooltip("Validation flags that control which conditions must be met when this component is used as a navigation target")]
+        [SerializeField]
+        private NavigationValidationFlags validationFlags = NavigationValidationFlags.CheckSelectableInteractable;
 
         [Tooltip("Enable upward navigation")]
         [SerializeField]
@@ -185,6 +211,15 @@ namespace BTools.BNav
         {
             get { return priority; }
             set { priority = value; }
+        }
+
+        /// <summary>
+        /// Validation flags that control which conditions must be met when this component is used as a navigation target
+        /// </summary>
+        public NavigationValidationFlags ValidationFlags
+        {
+            get { return validationFlags; }
+            set { validationFlags = value; }
         }
 
         /// <summary>
@@ -447,7 +482,17 @@ namespace BTools.BNav
                 return false;
             }
 
-            if (!target.isActiveAndEnabled || !target.CachedSelectable.IsInteractable())
+            // Apply validation based on target's validation flags
+            var flags = target.ValidationFlags;
+
+            // Check if target Selectable component is enabled
+            if (((flags & NavigationValidationFlags.CheckSelectableEnabled) != 0) && !target.CachedSelectable.enabled)
+            {
+                return false;
+            }
+
+            // Check if target Selectable is interactable
+            if (((flags & NavigationValidationFlags.CheckSelectableInteractable) != 0) && !target.CachedSelectable.IsInteractable())
             {
                 return false;
             }

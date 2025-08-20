@@ -30,8 +30,15 @@ namespace BTools.BNav.Editor
             "Backup navigation targets used when no direct target found in each direction. The closest target in the list will be selected." +
             "\n\nThis is especially useful for implementing loop navigation, e.g., pressing Down on the last item jumps to the first item.");
 
+        private static readonly GUIContent ContentNavigationTargetSettings = new GUIContent("Used As Navigation Target Settings",
+            "Configuration settings that control how this component behaves when it is used as a navigation target by other components. ");
+
+        private static readonly GUIContent ContentValidationFlags = new GUIContent("Validation Flags",
+            "Controls which conditions must be met when this component is used as a navigation target");
+
         private SerializedProperty belongGroupProp;
         private SerializedProperty priorityProp;
+        private SerializedProperty validationFlagsProp;
         private SerializedProperty enableUpProp;
         private SerializedProperty enableDownProp;
         private SerializedProperty enableLeftProp;
@@ -72,6 +79,10 @@ namespace BTools.BNav.Editor
             // Group Configuration section
             DrawSeparateLine("Group Configuration", topGap, bottomGap);
             DrawGroupConfigurationSection();
+
+            // Navigation Target Settings section
+            DrawSeparateLine(ContentNavigationTargetSettings, topGap, bottomGap);
+            DrawAsTargetConfigurationSection();
 
             // Direction Mode section
             DrawSeparateLine("Direction Mode", topGap, bottomGap);
@@ -137,6 +148,7 @@ namespace BTools.BNav.Editor
             // Find serialized properties
             belongGroupProp = serializedObject.FindProperty("belongGroup");
             priorityProp = serializedObject.FindProperty("priority");
+            validationFlagsProp = serializedObject.FindProperty("validationFlags");
             enableUpProp = serializedObject.FindProperty("enableUp");
             enableDownProp = serializedObject.FindProperty("enableDown");
             enableLeftProp = serializedObject.FindProperty("enableLeft");
@@ -284,13 +296,16 @@ namespace BTools.BNav.Editor
                     $"Group '{belongGroupProp.stringValue}' not found in Global Settings. It will cause issues with navigation.",
                     MessageType.Warning);
             }
+        }
+
+        private void DrawAsTargetConfigurationSection()
+        {
+            var oriLabelWidth = EditorGUIUtility.labelWidth;
+            EditorGUIUtility.labelWidth = 120;
 
             // Priority
             using (new EditorGUILayout.HorizontalScope())
             {
-                var oriLabelWidth = EditorGUIUtility.labelWidth;
-                EditorGUIUtility.labelWidth = 120;
-
                 EditorGUI.BeginChangeCheck();
 
                 var newPriority = EditorGUILayout.IntField(ContentPriority, priorityProp.intValue);
@@ -299,9 +314,12 @@ namespace BTools.BNav.Editor
                     Undo.RecordObject(target, "Change Priority");
                     priorityProp.intValue = newPriority;
                 }
-
-                EditorGUIUtility.labelWidth = oriLabelWidth;
             }
+
+            // Validation Flags
+            EditorGUILayout.PropertyField(validationFlagsProp, ContentValidationFlags);
+
+            EditorGUIUtility.labelWidth = oriLabelWidth;
         }
 
         private void DrawNavigationDirectionsSection()
